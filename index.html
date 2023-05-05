@@ -112,10 +112,10 @@
             </div><br>
 
             </div>
-
-            <button class="w3-button w3-light-grey w3-padding-large w3-section">
-                <i class="fa fa-download"></i> Download Resume
-            </button>
+                <a download="" href="./Hassan_Assaad.png">
+                    <button class="w3-button w3-light-grey w3-padding-large w3-section">
+                        <i class="fa fa-download"></i> Download Resume
+                    </button></a>
 
             <h3 class="w3-padding-16 w3-text-light-grey">My Price</h3>
             <div class="w3-row-padding" style="margin:0 -16px">
@@ -160,20 +160,20 @@
                 <p><i class="fa fa-phone fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Phone: +961 71 881 429</p>
                 <p><i class="fa fa-envelope fa-fw w3-text-white w3-xxlarge w3-margin-right"> </i> Email: assaadhassan00021@gmail.com</p>
                 <br>
-                <a href="https://instagram.com/h.x.y_a" target="_blank"><i class="fa fa-instagram w3-hover-opacity" style="font-size: 25px; margin-left: 15px;"
+                <a href="https://instagram.com/h.x.y_a" target="_blank"><i class="fa fa-instagram w3-hover-opacity" style="font-size: 25px; margin-right: 15px;"
                         id="instagram"></i></a>
-                <a href="https://github.com/sn-sniper" target="_blank"><i class="fa fa-github w3-hover-opacity" id="github" style="font-size: 25px; margin-left: 15px;"></i></a>
+                <a href="https://github.com/sn-sniper" target="_blank"><i class="fa fa-github w3-hover-opacity" id="github" style="font-size: 25px; margin-right: 15px;"></i></a>
             </div><br>
             <hr>
             <p>Let's get in touch. Send me a message:</p>
 
             <form action="/action_page.php" target="_blank">
-                <p><input class="w3-input w3-padding-16" type="text" placeholder="Name" required name="Name"></p>
-                <p><input class="w3-input w3-padding-16" type="text" placeholder="Email" required name="Email"></p>
-                <p><input class="w3-input w3-padding-16" type="text" placeholder="Subject" required name="Subject"></p>
-                <p><input class="w3-input w3-padding-16" type="text" placeholder="Message" required name="Message"></p>
+                <p><input class="w3-input w3-padding-16" type="text" placeholder="Name" required id="Name"></p>
+                <p><input class="w3-input w3-padding-16" type="text" placeholder="Email" required id="Email"></p>
+                <p><input class="w3-input w3-padding-16" type="text" placeholder="Subject" required id="Subject"></p>
+                <p><input class="w3-input w3-padding-16" type="text" placeholder="Message" required id="Message"></p>
                 <p>
-                    <button class="w3-button w3-light-grey w3-padding-large" type="submit">
+                    <button class="w3-button w3-light-grey w3-padding-large" type="submit" id="btn">
                         <i class="fa fa-paper-plane"></i> SEND MESSAGE
                     </button>
                 </p>
@@ -185,4 +185,26 @@
 
 </body>
 
+<script src="https://smtpjs.com/v3/smtp.js">
+</script>
+<script>
+    var btn = document.getElementById('btn');
+        btn.addEventListener('click', function (e) {
+            e.preventDefault()
+            var name = document.getElementById('Name').value;
+            var email = document.getElementById('Email').value;
+            var subject = document.getElementById('Subject').value;
+            var message = document.getElementById('Message').value;
+            var body = 'name: ' + name + '<br/>email: ' + email + '<br/>Subject: ' + '<br/>Message: ' + message;
+            Email.send({
+                SecureToken: "48a130c2-00fc-4370-8ec6-2aadb46b19cc",
+                To: "assaadhassan00021@gmail.com",
+                From: "assaadhassan00021@gmail.com",
+                Subject: subject,
+                Body: body,
+            }).then(
+                message => alert(message)
+            );
+        })
+</script>
 </html>
