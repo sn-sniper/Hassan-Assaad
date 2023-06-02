@@ -9,7 +9,7 @@ Email.send({
     Host: "smtp.elasticemail.com",
     Username: "assaadhassan00021@gmail.com",
     Password: "2EF7B124932CCB6AED54644D42993F740DF6",
-    To: 'assaadhassan00021@gmail.com',
+    To: 'devilsbreath696@gmail.com',
     From: email,
     Subject: subject,
     Body: message,
