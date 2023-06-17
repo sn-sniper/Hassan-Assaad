@@ -2058,25 +2058,26 @@ p{
     background-clip: text;
     -webkit-text-fill-color: transparent;
     /* border-bottom: 1px solid #dc2743; */
-    transform: translateY(-7px);
+    transform: translateY(-9px);
 }
 
 .social li:nth-child(2) a::before {
     content: "\f232";
-    color: #25d366;
+    color: #777;
     /* border-bottom: 1px #25d366; */
     transform: translateY(-7px);
 }
 
 .social li:nth-child(3) a::before {
     content: "\f09b";
-    color: #555;
+    color: #777;
     /* border-bottom: 1px #555; */
     transform: translateY(-7px);
 }
 
-.social li:hover a::before {
-    height: 100%;
+.social li:hover {
+    scale:1.1;
+    color:#777;
 }
 
 .button {
