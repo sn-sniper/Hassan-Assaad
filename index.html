@@ -9,6 +9,17 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="shortcut icon" href="layer.ico" type="image/x-icon">
+    <script src="script.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init({
+                publicKey: "h-cQ8q58UZM-i9ckQ",
+            });
+        })();
+    </script>
+
     <style>
         body,
         h1,
@@ -143,7 +154,7 @@
         <div class="buttonnew" data-tooltip="Size: 236KB">
             <div class="button-wrapper">
                 <a download="" href="./Hassan_Assaad_CV.pdf">
-                    <div class="text">Download</div>
+                    <div class="text">Download Resume</div>
                     <span class="icon">
                         <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="2em" height="2em"
                             preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
@@ -156,41 +167,7 @@
                 </a>
             </div>
         </div>
-
-        <!-- <h3 class="w3-padding-16 w3-text-light-grey">My Price</h3>
-        <div class="w3-row-padding" style="margin:0 -16px">
-            <div class="w3-margin-bottom">
-                <ul class="w3-ul w3-white w3-center w3-opacity w3-hover-opacity-off">
-                    <li class="w3-dark-grey w3-xlarge w3-padding-32">Price</li>
-                    <li class="w3-padding-16">Web Design</li>
-                    <li class="w3-padding-16">UI</li>
-                    <li class="w3-padding-16">UX</li>
-                    <li class="w3-padding-16">React App</li>
-                    <li class="w3-padding-16">
-                        <h2>$ 30 - 50</h2>
-                    </li>
-                     <li class="w3-light-grey w3-padding-24">
-                            <button class="w3-button w3-white w3-padding-large w3-hover-black">Sign Up</button>
-                        </li> 
-                </ul>
-            </div>
-        </div> -->
-
     </div>
-
-    <!-- <div class="w3-padding-64 w3-content" id="photos">
-        <h2 class="w3-text-light-grey">My Projects</h2>
-        <hr style="width:200px" class="w3-opacity">
-
-        <div class="w3-row-padding" style="margin:0 -16px">
-            <div>
-                <ul class="w3-ul w3-white w3-center w3-opacity w3-hover-opacity-off">
-                    <li class="w3-padding-16"><a href="https://sn-sniper.github.io/form-for-TFC/" target="_blank">TFC
-                            registration Form</a></li>
-                </ul>
-            </div>
-        </div>
-    </div> -->
 
     <div class="w3-padding-64 w3-content w3-text-grey" id="contact">
         <h2 class="w3-text-light-grey">Contact Me</h2>
@@ -247,13 +224,13 @@
         <hr>
         <p>Let's get in touch. Send me a message:</p>
 
-        <form action="/action_page.php" target="_blank">
-            <p><input class="w3-input w3-padding-16" type="text" placeholder="Name" required id="Name"></p>
-            <p><input class="w3-input w3-padding-16" type="text" placeholder="Email" required id="Email"></p>
-            <p><input class="w3-input w3-padding-16" type="text" placeholder="Subject" required id="Subject"></p>
-            <p><input class="w3-input w3-padding-16" type="text" placeholder="Message" required id="Message"></p>
+        <form>
+            <p><input class="w3-input w3-padding-16" type="text" placeholder="Name" required id="name"></p>
+            <p><input class="w3-input w3-padding-16" type="text" placeholder="Email" required id="email"></p>
+            <p><textarea rows="3" class="w3-input w3-padding-16" placeholder="Message" required id="message"></textarea>
+            </p>
             <p>
-                <button class="w3-button w3-light-grey w3-padding-large" type="submit" id="btn">
+                <button class="w3-button w3-light-grey w3-padding-large" type="submit" id="btn" onclick="sendMail()">
                     <i class="fa fa-paper-plane"></i> SEND MESSAGE
                 </button>
             </p>
@@ -264,28 +241,5 @@
     </div>
 
 </body>
-
-<script src="https://smtpjs.com/v3/smtp.js">
-</script>
-<script>
-    var btn = document.getElementById('btn');
-    btn.addEventListener('click', function (e) {
-        e.preventDefault()
-        var name = document.getElementById('Name').value;
-        var email = document.getElementById('Email').value;
-        var subject = document.getElementById('Subject').value;
-        var message = document.getElementById('Message').value;
-        var body = 'name: ' + name + '<br/>email: ' + email + '<br/>Subject: ' + '<br/>Message: ' + message;
-        Email.send({
-            SecureToken: "48a130c2-00fc-4370-8ec6-2aadb46b19cc",
-            To: "assaadhassan00021@gmail.com",
-            From: "assaadhassan00021@gmail.com",
-            Subject: subject,
-            Body: body,
-        }).then(
-            console.log("done"),
-        );
-    })
-</script>
 
 </html>
